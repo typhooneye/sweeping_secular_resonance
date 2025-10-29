@@ -1,0 +1,9 @@
+Sweeping Secular Resonance Solver
+
+1. analytical_estimate.ipynb
+    - Precession rates induced by disk potential and planet-planet interaction
+    - Location and timeof secular resonances
+2. rebound_prescribed_force.ipynb
+    - Implementation of disk potential and Type 1 migration forces in REBOUND
+3. rebound+SSR+type1_baseline.py
+    - Example script to simulate the evolution of a two-planet system under the influence of disk potential and Type 1 migration forces
