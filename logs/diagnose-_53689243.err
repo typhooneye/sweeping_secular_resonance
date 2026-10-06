@@ -1,0 +1,7 @@
+/home/xuanji/.local/lib/python3.11/site-packages/rebound/simulation.py:259: RuntimeWarning: Simulationarchive appears to be corrupted. REBOUND will attempt to fix it before appending more snapshots.
+
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/.local/lib/python3.11/site-packages/rebound/simulation.py:259: RuntimeWarning: Simulationarchive appears to be corrupted. REBOUND will attempt to fix it before appending more snapshots.
+
+  warnings.warn(msg[1:], RuntimeWarning)
+slurmstepd: error: *** JOB 53689243 ON midway3-0085 CANCELLED AT 2026-08-20T05:24:46 ***

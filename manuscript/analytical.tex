@@ -1,0 +1,400 @@
+\section{Analytical Model and Numerical Method}
+
+\subsection{Disk model}
+
+We consider an embryo $i$ interior to a single giant planet $j$. Their
+semimajor axes, eccentricities, masses, and mean motions are denoted by
+$(a_i,e_i,M_i,n_i)$ and $(a_j,e_j,M_j,n_j)$, respectively, and the stellar
+mass is $M_*$. The axisymmetric gas disk has surface density
+\begin{equation}
+    \Sigma(r,t)=\Sigma_1
+    \left(\frac{r}{1\,\mathrm{AU}}\right)^{-k}u(t),
+    \qquad
+    u(t)=\exp\left(-\frac{t}{T_{\rm dep}}\right).
+\label{eq:sigma_analytical}
+\end{equation}
+Because disk gravity is linear in $\Sigma$, every disk-induced precession
+rate can be written as $g_d(a,t)=u(t)g_{d,0}(a)$.
+
+For an untruncated power-law disk, the radial acceleration is
+\begin{equation}
+    F_{d,0}(r,t)=-\frac{2\pi G\Sigma(r,t)}{2-k}Z_k,
+\label{eq:full_disk_force}
+\end{equation}
+where
+\begin{eqnarray}
+    Z_k &=& 1+(2-k)(k-1)
+    \sum_{\ell=1}^{\infty}
+    \frac{(4\ell+1)A_\ell}
+    {(2\ell-1+k)(2\ell+2-k)},
+    \nonumber\\
+    A_\ell&=&
+    \left[\frac{(2\ell)!}{2^{2\ell}(\ell!)^2}\right]^2.
+\label{eq:zk_coefficients}
+\end{eqnarray}
+The corresponding apsidal precession of a nearly circular orbit is
+\begin{equation}
+    g_{d,0}(a)=-\frac{\pi G\Sigma(a,0)}{n(a)a}Z_k,
+    \qquad
+    n(a)=\left(\frac{GM_*}{a^3}\right)^{1/2}.
+\label{eq:full_disk_precession}
+\end{equation}
+For the default $k=3/2$ disk, $Z_k=1.0942$.
+
+To describe a truncated disk, we define the acceleration from the disk
+exterior to an edge $R$ for $r<R$,
+\begin{equation}
+    F_{>R}(r,t)=2\pi G\Sigma(r,t)
+    \sum_{\ell=1}^{\infty}
+    \frac{2\ell A_\ell}{2\ell-1+k}
+    \left(\frac{r}{R}\right)^{2\ell-1+k},
+\label{eq:exterior_disk_force}
+\end{equation}
+and the acceleration from the disk interior to $R$ for $r>R$,
+\begin{eqnarray}
+    F_{<R}(r,t)&=&-2\pi G\Sigma(r,t)
+    \left\{\frac{(R/r)^{2-k}}{2-k}\right.\nonumber\\
+    &&\left.+\sum_{\ell=1}^{\infty}
+    \frac{(2\ell+1)A_\ell}{2\ell+2-k}
+    \left(\frac{R}{r}\right)^{2\ell+2-k}\right\}.
+\label{eq:interior_disk_force}
+\end{eqnarray}
+The first term of Equation~\ref{eq:interior_disk_force} is the
+$\ell=0$ monopole. It contributes to the radial force but not to apsidal
+precession. For any small axisymmetric radial perturbation $F(r)$, the
+precession rate used here is
+\begin{equation}
+    g_F(a)=\frac{1}{2n(a)}
+    \left[\frac{2F}{a}+\frac{dF}{da}\right].
+\label{eq:force_to_precession}
+\end{equation}
+It is therefore useful to define
+\begin{eqnarray}
+    {\cal E}(a;R)&=&
+    \sum_{\ell=1}^{\infty}
+    \frac{2\ell(2\ell+1)A_\ell}{2\ell-1+k}
+    \left(\frac{a}{R}\right)^{2\ell-1+k},
+    \nonumber\\
+    {\cal I}(a;R)&=&
+    \sum_{\ell=1}^{\infty}
+    \frac{2\ell(2\ell+1)A_\ell}{2\ell+2-k}
+    \left(\frac{R}{a}\right)^{2\ell+2-k},
+\label{eq:edge_sums}
+\end{eqnarray}
+and $P(a)=\pi G\Sigma(a,0)/[n(a)a]$. Thus, an exterior disk gives
+$g_{>R}=P{\cal E}$, whereas an interior disk gives $g_{<R}=P{\cal I}$.
+
+Let $h_J=(M_j/3M_*)^{1/3}$. Following the reference implementation, the
+one-Hill-radius gap edges are
+\begin{equation}
+    (R_{\rm in},R_{\rm out})=
+    \begin{cases}
+    \left(a_j(1-e_j)(1-h_J),a_j(1+e_j)(1+h_J)\right),&e_j>h_J,\\
+    \left(a_j(1-h_J),a_j(1+h_J)\right),&e_j\leq h_J.
+    \end{cases}
+\label{eq:hill_gap_edges}
+\end{equation}
+The edges are fixed from the assigned initial giant orbit. Inner embryos use
+the $R_{\rm in}$ correction from the Multi\_HR5183 implementation, while
+bodies inside the gap use the two truncated disks,
+\begin{equation}
+g_{\rm empty}(a)=
+\begin{cases}
+-2P\left[(2-k)Z_k+\displaystyle\sum_{\ell=1}^{9}
+\frac{\ell(2\ell+1)A_\ell}{2\ell-1+k}
+\left(\frac{a}{R_{\rm in}}\right)^{2\ell-1+k}\right],
+&a<R_{\rm in},\\[3pt]
+ P\left[{\cal I}(a;R_{\rm in})
+             +{\cal E}(a;R_{\rm out})\right],
+&R_{\rm in}<a<R_{\rm out},\\[3pt]
+-PZ_k,&a\geq R_{\rm out}.
+\end{cases}
+\label{eq:empty_gap_precession}
+\end{equation}
+If the gap retains a fraction $k_{\rm gap}$ of the unperturbed density,
+linearity gives
+\begin{equation}
+    g_{\rm depgap}(a)=g_{\rm empty}(a)
+    +k_{\rm gap}\left[g_{d,0}(a)-g_{\rm empty}(a)\right].
+\label{eq:depleted_gap_precession}
+\end{equation}
+Here $k_{\rm gap}=0$ is an empty gap and $k_{\rm gap}=1$ recovers the
+no-gap disk. The default is the empty-gap limit, $k_{\rm gap}=0$. The same
+interpolation is used for the radial acceleration.
+An optional nonzero disk inner edge is implemented by subtracting the
+contribution of the disk interior to that edge in the general truncated-disk
+branches; the restored legacy $a<R_{\rm in}$ branch does not include this
+additional subtraction. The default model has no inner cutoff.
+
+\subsection{Location and time of the secular resonance}
+
+The giant causes the embryo to precess at the Laplace--Lagrange rate
+\begin{equation}
+    g_{i,j}=\frac{G M_j\alpha b_{3/2}^{(1)}(\alpha)}
+    {4n_i a_i^2a_>},
+    \qquad
+    \alpha=\frac{a_<}{a_>},
+\label{eq:gij_analytical}
+\end{equation}
+where $a_<\equiv\min(a_i,a_j)$ and $a_>\equiv\max(a_i,a_j)$. We evaluate the
+Laplace coefficient numerically,
+\begin{equation}
+    b_s^{(m)}(\alpha)=\frac{1}{\pi}
+    \int_0^{2\pi}
+    \frac{\cos(m\phi)\,d\phi}
+    {(1+\alpha^2-2\alpha\cos\phi)^s},
+\label{eq:laplace_integral}
+\end{equation}
+rather than using a truncated power series. General relativity adds the
+low-eccentricity precession
+\begin{equation}
+    g_{i,\rm GR}=\frac{3n_iGM_*}{a_i c^2}.
+\label{eq:gr_precession}
+\end{equation}
+
+The secular resonance occurs where the embryo and giant have equal
+apsidal precession rates,
+\begin{equation}
+    g_{i,j}+g_{i,\rm GR}+u(t_R)g_{i,d,0}
+    =u(t_R)g_{j,d,0}.
+\label{eq:sr_condition}
+\end{equation}
+The disk precession of each body is evaluated from the same disk geometry;
+in particular, the giant lies between the two edges of its own gap and is
+assigned the middle branch of Equation~\ref{eq:empty_gap_precession} or
+its partially depleted counterpart. The small GR precession of the giant
+is neglected in the analytical resonance location. Solving
+Equation~\ref{eq:sr_condition} gives
+\begin{equation}
+    u_R(a_i)=\exp\left[-\frac{t_R(a_i)}{T_{\rm dep}}\right]
+    =\frac{g_{i,j}+g_{i,\rm GR}}
+    {g_{j,d,0}-g_{i,d,0}},
+\label{eq:u_r_single_giant}
+\end{equation}
+and
+\begin{equation}
+    \frac{t_R(a_i)}{T_{\rm dep}}=-\ln u_R(a_i).
+\label{eq:t_r_single_giant}
+\end{equation}
+Only $0<u_R\leq1$ corresponds to a resonance reached during disk
+depletion. Equations~\ref{eq:u_r_single_giant} and
+\ref{eq:t_r_single_giant} therefore specify both where and when the
+secular resonance sweeps through the inner system.
+
+\subsection{Estimate of the surfing regime}
+
+The scale height is prescribed as
+\begin{equation}
+    H(a)=H_0\left(\frac{a}{1\,\mathrm{AU}}\right)^\beta,
+\end{equation}
+and the eccentricity-damping time of an embryo is
+\begin{equation}
+    t_e(a,t)=\frac{1}{f_e}
+    \left(\frac{M_*}{M_i}\right)
+    \left(\frac{M_*}{\Sigma(a,t)a^2}\right)
+    \left(\frac{H}{a}\right)^4\Omega_K^{-1},
+    \quad
+    \Omega_K=\left(\frac{GM_*}{a^3}\right)^{1/2}.
+\label{eq:type1_damping_time}
+\end{equation}
+At resonance passage we use $\Sigma(a,t_R)=\Sigma(a,0)u_R(a)$. We prescribe
+angular-momentum-conserving eccentricity damping with the radial force
+\begin{equation}
+    \mathbf a_e=-\frac{2v_r}{t_e(a,t_R)}\hat{\mathbf r}.
+\label{eq:radial_eccentricity_damping_force}
+\end{equation}
+The factor of two makes $t_e$ the eccentricity e-folding time in the
+small-eccentricity limit. Because the force is radial,
+\begin{equation}
+    \dot{\mathcal E}=-\frac{2v_r^2}{t_e},
+    \qquad \dot h=0.
+\label{eq:damping_energy_angular_momentum}
+\end{equation}
+On a Kepler orbit,
+$\langle v_r^2\rangle=(GM_*/a)[1-\sqrt{1-e^2}]$. Therefore
+\begin{equation}
+    \frac{\left\langle\dot a_{\rm circ}\right\rangle}{a}
+    =-\frac{4}{t_e(a,t_R)}\left(1-\sqrt{1-e^2}\right),
+\label{eq:circularization_speed}
+\end{equation}
+with the small-eccentricity limits
+\begin{equation}
+    \frac{\langle\dot e\rangle}{e}=-\frac{1}{t_e}+O(e^2),
+    \qquad
+    \frac{\langle\dot a_{\rm circ}\rangle}{a}
+    =-\frac{2e^2}{t_e}+O(e^4).
+\label{eq:radial_damping_orbit_average}
+\end{equation}
+
+The resonance trajectory has slope
+\begin{equation}
+    \frac{dt_R}{da}=-T_{\rm dep}\frac{d\ln u_R}{da}.
+\label{eq:sr_slope}
+\end{equation}
+Because the damping-driven migration is inward, compatible surfing requires
+$dt_R/da<0$, or equivalently $d\ln u_R/da>0$. For an eccentricity
+$e_{\rm kick}$ generated at resonance, the surfing map evaluates the
+dimensionless speed ratio
+\begin{eqnarray}
+    {\cal S}(a,T_{\rm dep})
+    &=&|\dot a_{\rm circ}|
+       \left|\frac{dt_R}{da}\right|
+    \nonumber\\
+    &=&\frac{4a[1-\sqrt{1-e_{\rm kick}^2}]}
+    {t_e(a,t_R)}
+    T_{\rm dep}\left|\frac{d\ln u_R}{da}\right|.
+\label{eq:surfing_number}
+\end{eqnarray}
+Thus ${\cal S}=1$ means that circularization-driven migration and the resonance sweep
+have equal radial speeds. The corresponding depletion-time boundary is
+\begin{equation}
+    T_{\rm dep,S=1}(a)=
+    \frac{t_e(a,t_R)}
+    {4a[1-\sqrt{1-e_{\rm kick}^2}]
+    |d\ln u_R/da|}.
+\label{eq:surfing_boundary}
+\end{equation}
+Values ${\cal S}\gtrsim1$ identify inward-sweeping configurations in which
+migration can be fast enough to follow the resonance. Sustained capture is
+not guaranteed by this local speed comparison alone.
+
+We also require resonance passage to be capable of producing the assumed
+$e_{\rm kick}$. The eccentricity forcing coefficient is
+\begin{equation}
+    B_{i,j}=\frac{n_i}{4}\frac{M_j}{M_*}
+    \alpha^2b_{3/2}^{(2)}(\alpha),
+\label{eq:secular_forcing_coefficient}
+\end{equation}
+and the stationary-phase estimate for a linear resonance crossing is
+\begin{equation}
+    e_{\rm sp}\simeq |B_{i,j}|e_j
+    \left(\frac{2\pi}{|\dot{\Delta g}_R|}\right)^{1/2},
+\label{eq:stationary_phase_kick}
+\end{equation}
+where
+\begin{equation}
+    \Delta g=g_i-g_j,
+    \qquad
+    |\dot{\Delta g}_R|
+    =\frac{u_R}{T_{\rm dep}}
+    |g_{j,d,0}-g_{i,d,0}|.
+\label{eq:relative_precession_sweep}
+\end{equation}
+The analytical surfing candidates satisfy both ${\cal S}\gtrsim1$ and
+$e_{\rm sp}\gtrsim e_{\rm kick}$. The second condition is an undamped
+linear estimate, so the resulting map is a configuration search rather
+than a proof of resonant capture.
+
+The current configuration search adopts the NLT05 parameters: a
+$1\,M_{\rm Jup}$ giant at $5.203\,\mathrm{AU}$,
+$\Sigma_1=1700\,\mathrm{g\,cm^{-2}}$, $k=3/2$,
+$H_0=0.05\,\mathrm{AU}$, $\beta=1.25$, and $f_e=1$. It evaluates embryo
+masses $0.03$, $0.3$, $1$, and $3\,M_\oplus$ over
+$0.4\leq a_i/\mathrm{AU}\leq3$ and
+$10^5\leq T_{\rm dep}/\mathrm{yr}\leq3\times10^7$, and shows both the
+no-gap and empty-gap limits. GR is disabled for this particular parameter
+survey. These choices define the plotted search grid, rather than a
+restriction of Equations~\ref{eq:surfing_number}--
+\ref{eq:relative_precession_sweep}.
+
+\subsection{Numerical setup and prescribed forces}
+
+The $N$-body calculations are performed with REBOUND in units of yr, AU,
+and $M_\odot$, for which $G=4\pi^2$. Newtonian gravity is integrated with
+MERCURIUS. The additional acceleration on a nonstellar body is
+\begin{equation}
+    \mathbf a_{\rm add}=F_d(r,t)\hat{\mathbf r}
+    +\mathbf a_{\rm GR}+\mathbf a_e+\mathbf a_a.
+\label{eq:additional_acceleration}
+\end{equation}
+The disk acceleration is applied to both the giant and the embryos. With the
+Multi\_HR5183 inner-embryo correction restored, it is
+\begin{equation}
+F_{\rm empty}=\begin{cases}
+-4\pi G\Sigma(r,t)\left[z_k+\displaystyle\sum_{\ell=1}^{9}
+\frac{\ell A_\ell}{2\ell-1+k}
+\left(\frac{r}{R_{\rm in}}\right)^{2\ell-1+k}\right],&a<R_{\rm in},\\
+F_{<R_{\rm in}}+F_{>R_{\rm out}},&R_{\rm in}<a<R_{\rm out},\\
+F_{d,0},&a\geq R_{\rm out}.
+\end{cases}
+\label{eq:empty_gap_force}
+\end{equation}
+The partially depleted force is extended by linear interpolation,
+\begin{equation}
+    F_{\rm depgap}=F_{\rm empty}
+    +k_{\rm gap}(F_{\rm full}-F_{\rm empty}).
+\label{eq:depleted_gap_force}
+\end{equation}
+The gap edges are calculated once from the assigned initial $a_j$ and $e_j$
+using Equation~\ref{eq:hill_gap_edges}. The general edge series are truncated
+at $\ell=30$ in the default calculation, while the restored Multi\_HR5183
+inner-embryo correction retains its original $\ell=1,\ldots,9$ truncation.
+
+The first post-Newtonian stellar acceleration is applied to embryos but not
+to the gap-opening giant,
+\begin{equation}
+    \mathbf a_{\rm GR}
+    =\frac{GM_*}{c^2r^3}
+    \left[\left(\frac{4GM_*}{r}-v^2\right)\mathbf r
+    +4(\mathbf r\mathbin{\cdot}\mathbf v)\mathbf v\right],
+\label{eq:numerical_gr_force}
+\end{equation}
+with $c=63241.077\,\mathrm{AU\,yr^{-1}}$.
+
+The dissipative forces are applied only to embryos. At each force
+evaluation, $\Sigma$, $H$, $\Omega_K$, and the remaining factors in the
+damping time are evaluated at the osculating semimajor axis $a$. Defining
+\begin{equation}
+    t_{\rm damp}=\left(\frac{M_*}{M_i}\right)
+    \left(\frac{M_*}{\Sigma(a,t)a^2}\right)
+    \left(\frac{H(a)}{a}\right)^4\Omega_K^{-1},
+\label{eq:numerical_damping_time}
+\end{equation}
+which is Equation~\ref{eq:type1_damping_time} before applying $f_e$, the
+tidal damping force is
+\begin{equation}
+    \mathbf a_e=-\frac{2[(\mathbf v_i-\mathbf v_*)\mathbin{\cdot}
+    \hat{\mathbf r}]}{t_e}\hat{\mathbf r},
+    \qquad t_e=\frac{t_{\rm damp}}{f_e}.
+\label{eq:numerical_eccentricity_force}
+\end{equation}
+This radial force exerts no torque, so eccentricity damping and explicit
+Type-I migration remain independently selectable.
+The default $f_e=1$ gives the nominal analytical damping strength, and
+$f_e=0$ disables this force.
+
+An optional explicit Type-I semimajor-axis force can also be enabled. We
+use the Tanaka et al. locally isothermal migration time for
+$\Sigma\propto r^{-k}$,
+\begin{equation}
+    t_a=\frac{1}{f_a(2.7+1.1k)}
+    \left(\frac{M_*}{M_i}\right)
+    \left(\frac{M_*}{\Sigma a^2}\right)
+    \left(\frac{H}{a}\right)^2\Omega_K^{-1},
+\label{eq:numerical_migration_time}
+\end{equation}
+and prescribe the associated inward tangential acceleration as
+\begin{equation}
+    \mathbf a_a=-\frac{v_K(r)}{2t_a}
+    \frac{\mathbf v-(\mathbf v\mathbin{\cdot}\hat{\mathbf r})
+    \hat{\mathbf r}}
+    {|\mathbf v-(\mathbf v\mathbin{\cdot}\hat{\mathbf r})
+    \hat{\mathbf r}|}.
+\label{eq:numerical_migration_force}
+\end{equation}
+The baseline $\mathtt{open\_typeI}=1$ uses only the radial eccentricity-damping
+force. Setting $\mathtt{open\_typeI}=2$ additionally enables the explicit
+Type-I torque. The surfing estimate above uses only
+Equation~\ref{eq:circularization_speed}; it does not include this explicit
+torque.
+
+The default disk parameters in the numerical force are
+$\Sigma_1=1700\,\mathrm{g\,cm^{-2}}$, $k=3/2$,
+$H_0=0.025\,\mathrm{AU}$, $\beta=1.25$,
+$T_{\rm dep}=1\,\mathrm{Myr}$, $N_H=1$, and $k_{\rm gap}=0$.
+The timestep and output interval are configurable. The baseline source
+sets the MERCURIUS timestep to $0.1$ times the innermost embryo's initial
+period; run scripts can override this value. Collisions are detected
+using physical radii and resolved as perfect mergers, and the full
+simulation state is stored in a REBOUND Simulationarchive for subsequent
+orbital and precession analysis.

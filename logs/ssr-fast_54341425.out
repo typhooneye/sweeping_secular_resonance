@@ -1,0 +1,7 @@
+running 2 fast SR runs with 2 workers
+parameters: M_J=1, a_J=5 AU, e_J=0.2, T_dep=1 kyr, a_emb=1 AU
+predicted SR crossing: approximately 4.8 kyr
+  /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/rebound_sr_fast/fe1/single_giant_aj_05.00_ej_0.20_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+  /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/rebound_sr_fast/fe0/single_giant_aj_05.00_ej_0.20_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+finished: single_giant_aj_05.00_ej_0.20_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+finished: single_giant_aj_05.00_ej_0.20_tdep_001.0kyr_nemb_1_aemb_1.00.bin

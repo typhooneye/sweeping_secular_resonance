@@ -1,0 +1,4 @@
+shard 1: queued continuation job (chain 3): Submitted batch job 48882200
+shard 1: running 2/54 surfing-search runs with 1 workers
+  gap/SURF_mJ_1_aemb_1.00_fe_0_ej_0.3_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_10_aemb_1.00_fe_0.5_ej_0.3_tdep_3e+06.bin  t_int=3.6e+07

@@ -1,0 +1,122 @@
+ns = 20
+A = [0]*ns
+const = [0]*ns
+for i in range(1,len(A)):
+  A[i] = float(math.factorial(2*i))/2**(2*i)/(math.factorial(i))**2
+  A[i] = A[i]**2
+  const[i] = i * (2*i + 1)
+
+def integrand(x, s, n, alpha):
+  r = math.cos(n*x) / (1 + alpha**2 - 2*alpha*math.cos(x))**s
+  r = r/math.pi
+  return r
+
+def bsn(s, n, alpha):
+  b = quad(integrand, 0 , 2*math.pi, args = (s, n, alpha))
+  bf = b[0]
+  return bf
+
+def integrand1(r, dens):
+  result = 2 * math.pi * r * dens * r**(-kg)
+  return result
+
+def cal_mj(dens, kg, r1, r2):
+  mj = quad(integrand1, r1, r2, args = (dens, kg))
+  return mj[0]
+
+
+
+def Gpd(mj, aj, aj_in, aj_out, kg):
+  if aj <= aj_in or aj >= aj_out:
+    nj = aj**(-1.5) * m_star**0.5
+    dens = densr(mj, aj, kg)
+    gpd = - math.pi * dens / (nj * aj)
+    n_tot = 0
+    #dens_out = dens0 * aj**(-kg)
+    #for i in range(len(A)):
+    #  if aj <= aj_in:
+    #    n = 2 * const[i] * A[i] * (aj/aj_in)**(2*i-1+kg)/(2*i-1+kg)
+    #  if aj >= aj_out:
+    #    n = 2 * const[i] * A[i] * (aj_out/aj)**(2*i+2-kg)/(2*i+2-kg)
+    #  n_tot = n_tot + n
+    #if mj > m_crit:
+    #    a_in, a_out = cal_gap(aj, mj, 0.0)
+    #    print('test gap apund the planet:', a_in, aj, a_out)
+    #    gpd = Gjd(aj, a_in, a_out) + gpd*n_tot
+        #print('cJ:', Gjd(aj, a_in, a_out), gpd*n_tot, n_tot)
+    #else:
+    gpd = gpd *(zk + n_tot)
+  if aj > aj_in and aj < aj_out:
+    a_in = aj_in
+    a_out = aj_out
+    gpd = Gjd(aj, a_in, a_out, kg)
+    #print('pert:', gpd)
+  return gpd
+
+
+def Gjd(aj, ain, aout, kg):
+  nj = aj**(-1.5) * m_star**0.5
+  #dens = densr(mj, aj)
+  dens = dens0 * aj**(-kg)
+  dens_in = dens0 * ain**(-kg)
+  dens_out = dens0 * aout**(-kg)
+  #gjd = 2 * math.pi * dens / (nj * aj)
+  gjd = 2 * math.pi / (nj * aj)
+  n_tot = 0
+  for i in range(len(A)):
+    #n = const[i] * A[i] * (dens_out*(aj/aout)**(2*i-1+kg)/(2*i-1+kg) + dens_in*(ain/aj)**(2*i+2-kg)/(2*i+2-kg))
+    n = const[i] * A[i] * (dens*(aj/aout)**(2*i-1+kg)/(2*i-1+kg) + dens*(ain/aj)**(2*i+2-kg)/(2*i+2-kg))
+    #n = const[i] * A[i] * ((aj/aout)**(2*i-1+kg)/(2*i-1+kg))
+    #n = const[i] * A[i] * ((ain/aj)**(2*i+2-kg)/(2*i+2-kg))
+    #print(aj, (aj/aout)**(2*i-1+kg)/(2*i-1+kg), (ain/aj)**(2*i+2-kg)/(2*i+2-kg))
+    n_tot = n_tot + n
+    #print(dens_out, dens_in, dens_out*(aj/aout)**(2*i-1+kg)/(2*i-1+kg), dens*(aj/aout)**(2*i-1+kg)/(2*i-1+kg))
+  gjd = gjd * n_tot
+  return gjd
+
+
+def Gij(ai, aj, mj):
+  alpha = min(ai, aj) / max(ai, aj)
+  b1 = bsn(1.5, 1, alpha)
+  ni = ai**(-1.5) * m_star**0.5
+  gij = mj * alpha * b1 
+  gij = gij / (4 * ni * ai**2 * max(ai, aj))
+  return gij
+
+
+def Ggr(aj):
+  nj = aj**(-1.5) * m_star**0.5
+  vc = 1e4
+  ggr = 3 * nj * m_star / (aj * vc**2)
+#  print ggr * 360 * 3600
+  return ggr
+
+
+def Gtide(aj,mj):
+#  aj = 0.1
+  nj = aj**(-1.5) * m_star**0.5
+  mr12 = m_star/mj
+  mr21 = mj/m_star
+  k_star = 0.0014
+  k_j = 0.25
+  gtide = 15. * nj * (mr21*k_star*(r_star/aj)**5 + mr12*k_j*(r_p/aj)**5)
+  #print gtide * 360 * 3600
+  return gtide
+
+
+def cal_gap(aj, mj, ej):
+  ratio = mj/m_star
+  rh = (ratio/3)**0.333
+  if ej > rh:
+    return aj*(1-ej)*(1-rh), aj*(1+ej)*(1+rh)
+  else:
+    return aj*(1-rh), aj*(1+rh)
+
+def densr(mj, aj, kg):
+    sigma = dens0 * aj**(-kg)
+    #if mj > m_crit:
+    #    hr = h0*aj**0.25
+    #    K = mj*mj / hr**5 /1e-2
+    #    sigma = sigma/(1+0.04*K)
+    #    #sigma = 0.0
+    return sigma

@@ -1,0 +1,14 @@
+running 12 quick SSR tests with 12 workers
+output_dir=/project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/rebound_ssr_quick_tdep1kyr
+single_giant_aj_05.00_ej_0.05_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_05.00_ej_0.50_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_05.00_ej_0.80_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_10.00_ej_0.05_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_10.00_ej_0.50_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_10.00_ej_0.80_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_20.00_ej_0.05_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_20.00_ej_0.50_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_20.00_ej_0.80_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_30.00_ej_0.05_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_30.00_ej_0.50_tdep_001.0kyr_nemb_1_aemb_1.00.bin
+single_giant_aj_30.00_ej_0.80_tdep_001.0kyr_nemb_1_aemb_1.00.bin

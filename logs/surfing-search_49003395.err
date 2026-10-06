@@ -1,0 +1,7 @@
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+slurmstepd-midway2-0314: error: *** JOB 49003395 ON midway2-0314 CANCELLED AT 2026-09-13T03:49:18 DUE TO TIME LIMIT ***

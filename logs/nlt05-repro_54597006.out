@@ -1,0 +1,22 @@
+queued continuation job (chain 1): Submitted batch job 54597007
+running 20/20 NLT05 reproduction runs with 20 workers
+  fig3/NLT05_memb_0.03_aemb_0.70_ejup_0.01_tdep_1e+05.bin  t_int=1.2e+06
+  fig3/NLT05_memb_0.03_aemb_1.50_ejup_0.01_tdep_1e+05.bin  t_int=1.2e+06
+  fig3/NLT05_memb_0.03_aemb_2.00_ejup_0.01_tdep_1e+05.bin  t_int=1.2e+06
+  fig3/NLT05_memb_0.03_aemb_0.70_ejup_0.01_tdep_1e+06.bin  t_int=1.2e+07
+  fig3/NLT05_memb_0.03_aemb_1.50_ejup_0.01_tdep_1e+06.bin  t_int=1.2e+07
+  fig3/NLT05_memb_0.03_aemb_2.00_ejup_0.01_tdep_1e+06.bin  t_int=1.2e+07
+  fig4/NLT05_memb_0.03_aemb_1.00_ejup_0.01_tdep_1e+05.bin  t_int=1.2e+06
+  fig4/NLT05_memb_0.3_aemb_1.00_ejup_0.01_tdep_1e+05.bin  t_int=1.2e+06
+  fig4/NLT05_memb_1_aemb_1.00_ejup_0.01_tdep_1e+05.bin  t_int=1.2e+06
+  fig4/NLT05_memb_0.03_aemb_1.00_ejup_0.048_tdep_1e+05.bin  t_int=1.2e+06
+  fig4/NLT05_memb_0.3_aemb_1.00_ejup_0.048_tdep_1e+05.bin  t_int=1.2e+06
+  fig4/NLT05_memb_1_aemb_1.00_ejup_0.048_tdep_1e+05.bin  t_int=1.2e+06
+  fig4/NLT05_memb_0.03_aemb_1.00_ejup_0.01_tdep_1e+06.bin  t_int=1.2e+07
+  fig4/NLT05_memb_0.3_aemb_1.00_ejup_0.01_tdep_1e+06.bin  t_int=1.2e+07
+  fig4/NLT05_memb_1_aemb_1.00_ejup_0.01_tdep_1e+06.bin  t_int=1.2e+07
+  fig4/NLT05_memb_0.03_aemb_1.00_ejup_0.048_tdep_1e+06.bin  t_int=1.2e+07
+  fig4/NLT05_memb_0.3_aemb_1.00_ejup_0.048_tdep_1e+06.bin  t_int=1.2e+07
+  fig4/NLT05_memb_1_aemb_1.00_ejup_0.048_tdep_1e+06.bin  t_int=1.2e+07
+  fig7/NLT05_memb_0.3_aemb_1.00_ejup_0.048_tdep_5e+05.bin  t_int=6.0e+06
+  fig7/NLT05_memb_0.3_aemb_1.00_ejup_0.048_tdep_5e+06.bin  t_int=6.0e+07

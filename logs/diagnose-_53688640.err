@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/var/spool/slurm/d/job53688640/slurm_script", line 41, in <module>
+    REPO_DIR = Path(os.environ.get("SLURM_SUBMIT_DIR", Path(__file__).resolve().parent)).resolve()
+                    ^^
+NameError: name 'os' is not defined

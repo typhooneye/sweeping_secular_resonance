@@ -1,0 +1,108 @@
+m_j = 1e-3
+m_s = 0.000285716656
+m_e = 3e-6
+r_e = 6e3
+r_j = 7e4
+
+m_sun = 1
+r_sun = 0.005
+
+m_star = m_sun
+r_star = r_sun
+
+dens0 = 1700. * 1.125e-7
+kg = 1.5
+zk = 1.094
+h0 = 0.05
+cd = 0.165
+tdep = 1e6
+
+m_emb = 0.01*m_e
+r_emb = r_e * (m_emb / m_e)**0.333
+m_crit = m_s
+
+m_pert = 3*m_j
+
+
+
+def cal_ssr_curve(a_pert, e_pert, 
+                  m_pert, dens0, kg,   
+                apert_in, apert_out, da=0.01,
+                  force_apert_in=None):
+   
+    #apert_in, apert_out = cal_gap(a_pert, m_pert, e_pert)
+    #if force_apert_in is None:
+    #    apert_in = 5 * r_star
+
+    a_ssr, t_ssr, sigma = [], [], []
+    a_vals = np.arange(a_pert*0.1, a_pert*2 + da, da)
+
+    for a_p in a_vals:
+        g_jd = Gpd(m_pert, a_pert, apert_in, apert_out, kg)
+        g_pd = Gpd(m_emb, a_p, apert_in, apert_out, kg)
+        g_pj = Gij(a_p, a_pert, m_pert)
+        g_pg = Ggr(a_p)
+
+        denom = g_jd - g_pd
+        if denom == 0:
+            continue
+
+        expt = (g_pj + g_pg) / denom
+        tssr = -np.log(expt)
+        if tssr > 0:
+            a_ssr.append(a_p)
+            t_ssr.append(tssr)
+            sigma.append(dens0 * expt)
+
+    return (np.array(a_ssr), np.array(t_ssr), np.array(sigma),
+            apert_in, apert_out)
+
+
+
+# ---------------------- example: single case ----------------------
+a_pert = 75
+e_pert = 0.2
+
+a_in1 = a_pert * (1 - e_pert) * (1 - 1 * (m_pert / 3.)**(1 / 3.))
+a_in2 = a_pert * (1 - e_pert) * (1 - 2 * (m_pert / 3.)**(1 / 3.))
+a_out1 = a_pert * (1 + e_pert) * (1 + 1 * (m_pert / 3.)**(1 / 3.))
+a_out2 = a_pert * (1 + e_pert) * (1 + 2 * (m_pert / 3.)**(1 / 3.))
+print(a_in1, a_in2, a_out1, a_out2)
+a_ssr1, t_ssr1, sigma1, apert_in1, apert_out1 = cal_ssr_curve(a_pert, e_pert, m_pert, dens0, kg, apert_in=a_in1, apert_out=a_out1, da=0.001)
+print(apert_in1, apert_out1)
+
+a_ssr2, t_ssr2, sigma2, apert_in2, apert_out2 = cal_ssr_curve(a_pert, e_pert, m_pert, dens0, kg, apert_in=a_in2, apert_out=a_out2, da=0.001)
+
+a_in3 = 100.
+a_out3 = 200.
+a_ssr3, t_ssr3, sigma3, apert_in3, apert_out3 = cal_ssr_curve(a_pert, e_pert, m_pert, dens0, kg, apert_in=a_in3, apert_out=a_out3, da=0.001)
+
+a_in4 = a_pert * (1 - (m_pert / 3.)**(1 / 3.))
+a_out4 = a_pert * (1 + (m_pert / 3.)**(1 / 3.))
+a_ssr4, t_ssr4, sigma4, apert_in4, apert_out4 = cal_ssr_curve(a_pert, e_pert, m_pert, dens0, kg, apert_in=a_in4, apert_out=a_out4, da=0.001)
+print(a_in4, a_out4)
+#t_ssr_max = np.max(t_ssr[t_ssr > 0])
+#a_ssr_tmax = a_ssr[np.argmax(t_ssr[t_ssr > 0])]
+#print('t_ssr_max=', t_ssr_max, 'a_ssr_tmax=', a_ssr_tmax)
+#print('Finish SSR calculation')
+fig, ax = plt.subplots(figsize=(8, 6))
+ax1 = ax  # compatibility with later plot code
+#ax.scatter(a_ssr1, t_ssr1, color='C0', alpha=0.5, s=2, label='a(1-e)(1-Rh)')
+#ax.scatter(a_ssr2, t_ssr2, color='C1', alpha=0.5, s=2, label='a(1-e)(1-2Rh)')
+#ax.scatter(a_ssr3, t_ssr3, color='C2', alpha=0.5, s=2, label='No gap')
+ax.plot(a_ssr4, t_ssr4, color='C3', alpha=0.5, label='a(1-Rh)')
+ax.vlines(x=a_pert, ymin=0, ymax=10, lw=2, color='grey')
+ax.vlines(x=apert_in1, ymin=0, ymax=10, lw=2, linestyle='--', color='grey')
+ax.vlines(x=apert_out1, ymin=0, ymax=10, lw=2, linestyle='--', color='grey')
+ax.vlines(x=apert_in2, ymin=0, ymax=10, lw=2, linestyle=':', color='grey')
+ax.vlines(x=apert_out2, ymin=0, ymax=10, lw=2, linestyle=':', color='grey')
+ax.vlines(x=apert_in4, ymin=0, ymax=10, lw=2, linestyle='-.', color='grey')
+ax.vlines(x=apert_out4, ymin=0, ymax=10, lw=2, linestyle='-.', color='grey')
+ax.set_ylabel(r'$t/\tau_{\mathrm{dep}}$')
+ax.set_xlabel('a (AU)')
+#ax.set_yscale('log')
+#ax.set_xscale('log')
+ax.grid(True)
+ax.legend()
+ax1.set_title(f'SSR curve for $a_\\mathrm{{pert}}={a_pert:.1f}$ AU, $e_\\mathrm{{pert}}={e_pert}$')
+plt.show()

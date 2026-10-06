@@ -1,0 +1,301 @@
+
+\documentclass{aastex63}
+
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+\shorttitle{Final Report}
+\shortauthors{Xuan Ji}
+
+\graphicspath{{./}{figures/}}
+
+\begin{document}
+
+\title{The role of an outer giant planet on water delivery}
+
+
+\author{Xuan Ji}
+
+
+
+
+\begin{abstract}
+
+\citet{2007ApJ...669..606R} performed dynamical simulations to investigate the water delivery process during planetary formation in a static gas disk. Their results suggest (1) the radial mixing of the embryos and therefore water delivery is inefficient in the lower mass disks scaled with low-mass stars, (2) the final mass of the planet in habitable zone is likely to be low around low-mass stars. My follow-up project considers a case of the gas depletion stage after the formation of a Jupiter-like planet in the disk. The analytical solution suggests the sweeping secular resonance always occur in the feeding zone and habitable zone within the formation stage with the semi-major axis of the giant planet ranging from 5 AU to 30 AU. The numerical simulations are also conducted.
+
+
+
+\end{abstract}
+
+
+
+\section{Introduction} \label{sec:intro}
+
+\citet{2007ApJ...669..606R} concludes the probability of habitable planets decreases around low-mass stars. They define habitable planets as the terrestrial planets in the habitable zone that are big enough ($>3M_\oplus$) and have liquid water on their surface. The mass criterion is because smaller terrestrial planets are less likely to retain the substantial atmospheres and ongoing tectonic activity probably required to support life. The habitable zone (HZ) is defined as the distance annulus within which a terrestrial planet is capable to maintain liquid water on its surface\citep{KASTING1993108}, but whether a planet in HZ actually maintains liquid water on its surface also depends on the water delivery process on their formation stage. \citet{2007ApJ...669..606R} performed dynamical simulations to investigate the scaling between terrestrial planet mass and disk properties and the water delivery process during its formation. As the simulations show (Figure \ref{fig:my_label}), terrestrial planets tend to be much smaller around low-mass stars. Additionally, planets in the HZs of low-mass stars tend to be dry and more closely spaced. No water was delivered to any planets in the HZ in the system around a 0.6 $M_{sun}$ star. The typical formation time of the HZ planets is also suggested and is consistent with the scale analysis.
+
+
+My follow-up project considers a case of the gas depletion stage after the formation of a Jupiter-like planet in the disk. There are two effects that would influence the collision and the merger of the inner embryos and therefore influence the water delivery, which are the sweeping secular resonance and the tidal drag from the disk. The combination of those two factors could introduce the secular resonance to sweep throughout the disk \citep{WARD1981234}. The giant planets on orbits exterior to the terrestrial region could introduce procession to the inner embryos. Once the apsidal precession rate of the embryos matches that of the outer giant planet, they will experience the secular resonance and the eccentricities of embryos will be excited from the outside in, and therefore, enhance the collisions among embryos. With the disk depleting, the secular resonance could occur from the outside in. In consequence, the existence of the outer giant planet may have a huge impact on HZ planets’ formation and water delivery by introducing the secular resonance. At the same time the tidal drag effectively damps the eccentricities of the fully grown embryos and also induces the decay of the semi-major axes of the planets As a result of balance between damping and excitation of eccentricity, the embryos migrate along with the secular resonance, which leads the water-rich planets to migrate inward and enhance the water delivery.
+
+
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.4]{figure1.png}
+    \caption{Final outcomes of 10 simulations, two for each stellar mass chosen, with the solar system for scale. As in Fig. 1, color represents water content, and particle size scales with the planet mass. The lines under each planet represent the radial excursion of a planet over its orbit( a(1-e)~a(1+e)); these values are averaged over the last 10 Myr of each simulation. The HZ is shaded for each stellar mass.}
+    \label{fig:my_label}
+\end{figure*}
+
+\citet{2007ApJ...669..606R} discussed the effects of giant planets in section 3.3 and concluded that the formation timescales of HZ planets in giant planet simulations were comparable to those with no giant planets. However, they only tested the giant planet on a circular orbit at 1.3 AU for Neptune- and Jupiter-mass giant planets. So it is not a general conclusion. Therefore, I want to first do some mathematical analysis to draw a more general conclusion: will the secular resonance introduced by a giant planet occur within the planet formation and water delivery stage, given any location of the giant planet? I chose several typical cases to perform N-body simulations to investigate the water-delivery process during the secular resonance. 
+
+
+\section{Methodology}
+
+\subsection{Analytical solution}
+
+\subsubsection{disk model}
+
+The mathematical analysis can estimate the location and time of the occurring of the secular resonance(SR). In principle, all the planets contribute to the secular perturbation. However, in this case, a particularly strong SR among these is the one induced by the giant planet’s perturbation. Therefore the occurring of SR can be estimated as a condition where the precession rate of the periastron of the embryos coincide with the one of the outer giant planet.
+
+For the disk model, \citet{2007ApJ...669..606R} assumes the surface density of protoplanetary disks, $\Sigma$, to scale with heliocentric distance $r$ as:
+
+\begin{equation}
+\label{eq:initial disk}
+    \Sigma(r) = \Sigma_1 fZ(\frac{r}{1AU})^{-\alpha}(\frac{M_*}{M_\odot})^h
+\end{equation}
+
+where $fZ=1, \alpha =1$ and $h=1$. I apply the same disk model but also consider the depletion of the gas with a characteristic timescale of $\tau_n$, so the disk surface density evolves with time as
+
+\begin{equation}
+    \Sigma(r,t) = \Sigma_1 fZ(\frac{r}{1AU})^{-\alpha}(\frac{M_*}{M_\odot})^h\rm{exp} (-\frac{t}{\tau_n})
+\end{equation}
+
+\subsubsection{giant planet precession}
+
+For the giant planet, the embryos can be considered massless bodies compared with the Jovian planets. So only disk gravitational potential will induce the giant planet’s precession. 
+
+When the giant planet gets massive enough, a gap is formed with a radial extend between $R_in$ and $R_out$. (\citep{1980ApJ...241..425G})
+
+
+\begin{eqnarray}
+    R_{\rm in} = a_j(1-e_j)(1 -(\frac{M_j}{3M_*})^{1/3}); \nonumber \\
+    R_{\rm out} = a_j(1+e_j)(1 +(\frac{M_j}{3M_*})^{1/3});
+\label{eq:gap_radius}
+\end{eqnarray}
+
+Surrounded by a gap, the apsidal precession rate of the cold Jupiter caused by the disk is \citep{2000AJ....119.1480N}\citep{WARD1981234}
+
+\begin{eqnarray}
+\label{eq:disk_j_gap}
+    g_{j,disk}&=&\frac{d\omega_j}{dt} \sim (\frac{\pi G \Sigma_{init}(a_j)}{n_j a_j})\Sigma_{l=1}^{\infty}l(2l+1)A_l \nonumber \times [\frac{(R_{\rm in}/a)^{2l+2-k}}{2l+2-k}+\frac{(a/R_{\rm out})^{2l-1+k}}{2l-1+k}]
+\end{eqnarray}
+where $A_l = [(2l)!/2^{2l}/(l!)^2]^2$. During the disk depletion, the rate decrease as $g'_{j,disk} = g_{j,disk}exp(-t/\tau_n)$.
+
+
+\subsubsection{embryos precession}
+
+The precession rate of the periastron of the embryos induced by the giant planet according to \citep{2000ssd..book.....M} is shown below. With a finite eccentricity, the giant planet $j$ (with mas $m_j$, semimajor axis $a_j$, mean motion $n_j$, eccentricity $e_j$, and longitudes of periastron$\omega_j$) exert a secular perturbation on the inner embryos $i$ (with mass $m_i$, semimajor axis $a_i$, mean motion $n_i$, eccentricity $e_i$, and longitudes of periastron$\omega_i$), resulting in the precession of their longitudes of periastron and the modulation of their eccentricities. The precession is at a rate
+
+\begin{equation}
+\frac{d\omega_{i,j}}{dt} = \frac{1}{t_{i,j}}[1+C_{i,j}(\frac{e_j}{e_i}cos(\omega_i-\omega_j)]
+\end{equation}
+where 
+
+\begin{equation}
+t_{i,j}^{-1} = \frac{Gm_j\alpha b_{3/2}^{(1)}}{4n_i a_i^2max(a_i,a_j)} \equiv g_{i,j} 
+\end{equation}
+
+is a secular part of the precession of planet $i$ introduced by planet $j$, $\alpha$ = min($a_i$,$a_j$)/ max($a_i$,$a_j$) $C_{i,j} \equiv b_{3/2}^{(2)}/b_{3/2}^{(1)}$, where $b_s^{j}$ is the Laplace coefficient and it can be estimated as : 
+
+\begin{eqnarray}
+     b_s^{(k)}(\alpha)& = &\frac{s(s+1)...(s+k-1)}{1\cdot 2\cdot ... \cdot k} \alpha^k  \times [1 + \frac{s(s+k)}{1(k+1)} \alpha^2 \nonumber + \frac{s(s+1)(s+k)(s+k+1)}{1 \cdot 2(k+1)(k+2)}\alpha^4+...]
+\end{eqnarray}
+
+As we care about the embryos interior to the giant planet, only the first ten terms of this expanding are taken into account.  Noted that the effects on the giant planet caused by the embryos are so slight, so we neglect it.
+
+As we focus on the orbital evolution of the embryos interior to the cold Jupiter, only accept the first ten terms of this expanding are taken into account. Noted that the effects on the cold Jupiter caused by the gravitational interaction with the embryos are so slight that we neglect it. 
+
+Under the effect of the gravitational potential of the disk, the embryos also undergo precessions. Considering the gap structure caused by the giant planet, the initial apsidal precession rate of the embryos is 
+
+\begin{eqnarray}
+\label{eq:i_disk_ingap}
+    g_{i,disk} \equiv \frac{d\omega_{i,disk}}{dt} \sim -\frac{\pi G\Sigma_{init}(a_i) }{n_i a_i}\times(Z_k+ \Sigma_{l=1}^{\infty} l(2l+1)A_l  \frac{(a_i/R_{\rm in})^{2l-1+k}}{2l-1+k})
+\end{eqnarray}
+
+where $\Sigma_{init}$ is the initial surface density shown by equation (\ref{eq:initial disk}), and $Z_k$ is a constant. Assuming a minmum-mass disk, $Z_{3/2} = 1.094$.
+
+During the depletion of the disk, the rate ($g'_{i,disk}$) changes under the power law,
+
+\begin{equation}
+    g'_{i,disk}=g_{i,disk}\rm{exp} (-\frac{\emph{-t}}{\tau_n})
+\end{equation}
+where $\tau_n$ is the depletion timescale of the gas disk
+
+\subsubsection{secular resonance}
+
+Once the precession rate of the embryos match that of the giant planet, they will experience the secular resonance in which the phase ($\omega_i -\omega_j$) is locked. Therefore, the angular momentum is monotonically transferred from the embryos to the cold Jupiter and the eccentricity of the embryos will be excited. The resonance condition should be
+
+\begin{equation}
+    g_{i,j} + g'_{i,disk} = g'_{j,disk}  
+\end{equation}
+
+Noted that precession caused by the disk is much larger than that introduced by the giant planet everywhere in the minimum-mass nebula. Therefore, only when the disk is under depletion, can the maginitude of these precession rates be comparable to each other and then can the secular resonance occur. The time ($t_R$) when the secular resonance passes $a AU$ can be calculated as 
+
+\begin{equation}
+    u_R \equiv exp(-\frac{t_R}{\tau_n}) = \frac{g_{i,j}}{g_{j,disk}-g_{i,disk}}
+\end{equation}
+
+\subsection{Numerical solution}
+
+\subsubsection{model setting up \label{sec: setting up}}
+
+
+The disk model in \citet{2007ApJ...669..606R} is shown by equation (\ref{eq:initial disk}). They assume that the disk evolved following the standard model of terrestrial planet growth: grains coalesced to form km- sized planetesimals; and embryos formed from planetes- imals via runaway and oligarchic growth ), spaced by 5-10 mutual Hill radii. For the case of 1 $M_\odot$, they generated a population of ∼ 75 embryos from 0.5 to 4 AU, totaling $4.95 M_\oplus$. The feeding zones for different stars scale with the stellar luminosity and therefore scale with the stellar mass, which are shown in Table \ref{table: para}. 
+
+Embryos are assigned water contents based on the waterline of ~ 2.5 AU in our solar system. They take it as this boundary between "dry" and "wet" embryos and it scales with the stellar flux in the same way as the HZ. Embryos beyond this boundary contain $5\%$ water by mass, and those inside are dry. When the “wet” embryos hit the “dry” embryos, the water is delivered.  The water lines also scale with the stellar mass as shown in Table \ref{table: para}.
+
+\subsubsection{additional force}
+
+I will keep this set-up and run it using REBOUND\citep{2012A&A...537A.128R}. The gravational interactions among embryos and giant planet can be directly simulated. The disk is taken into account by adding the additional forces.
+
+
+For the giant planet, the force from disk potential should be \citep{2000AJ....119.1480N, WARD1981234}:
+\begin{eqnarray}
+F(r,t) = & 2 & \pi G \Sigma(r,t) \sum_{n=0}^{\infty} A_{n}\{ 
+		( \frac{2n}         {2n-1+k}       )
+		( \frac{r}          {R_{\rm out}}  )^{2n-1+k} \nonumber \\
+	  & - &( \frac{2n+1}       {2n+2-k}      )
+  	    ( \frac{R_{\rm in}} {r}            )^{2n+2-k} 	\}.
+\end{eqnarray}
+
+where $G$ is the gravitational constant, $A_n$ is a constant shown above.
+
+
+For the embryos, the apsidal precession caused by the gas disk is dominated by the gas in their neighborhood, so the force expression is:
+
+\begin{eqnarray}
+ F  &=&  - 4\pi G \Sigma(r,t)\{
+	Z_k + \nonumber \\
+	&\sum &_{n=0}^{\infty} A_{n} 
+	(\frac{n}{2n-1+k}) 
+	(\frac{r}{R_{\rm in}})^{2n-1+k} \}. 
+\label {eq:f_pd}
+\end{eqnarray}
+
+In addition, the eccentricities of the embryos is also damped and excited through the interaction with the disk  \citep{goldreichtremaine1980, ward1997}. With a simple approximation, the force cause the eccentricity damping can be written as:
+
+\begin{equation}
+{\bf F}_{\rm D} = - \frac{{\bf V} - {\bf V}_{\rm kep}^{\prime}}
+{T_{\rm damp}/f_e} \quad .
+\label{eq:dragforce}
+\end{equation}
+
+where $f_e$ is the coefficient and we set it as 1. We adopted the timescale of Type 1 migration to characterize the eccentricity damping  mechanism \citep{2000AJ....119.1480N}:
+
+\begin{eqnarray} 
+T_{\rm damp,t} \simeq 
+	\left(\frac{M_{\ast}}{M_{p}}\right)
+	\left(\frac{M_{\ast}}{\Sigma a^2} \right)
+	\left(\frac{c_s}{a\Omega_K}\right)^4 \Omega_{k}^{-1} 
+\label{eq:t2}
+\end{eqnarray}
+
+where $\Omega_k = (GM_*/a^3)^{1/2}$ is the Kepler frequency, and $c_s = H(r)\cdot \Omega_k$ is the sound speed of the gas disk. $H(r) = H_0\cdot (\frac{r_p}{1au})^{1.25}$ is the disk scale height and we accept $H_0 = 0.05 AU$ in this work.
+
+
+
+
+
+
+
+
+\scriptsize
+\begin{deluxetable}{ccccccc}
+%\begin{deluxetable}{p{2cm} p{2cm} p{2cm} p{2cm} p{2cm} p{2cm} p{2cm}}
+\label{table: para}
+\tablewidth{0pt}
+\tablecaption{Initial Conditions for Simulations\tablenotemark{1}}
+\renewcommand{\arraystretch}{.6}
+\tablehead{
+\colhead{$M_\star$} &  
+\colhead{Range (AU)} & 
+\colhead{Mass ($M_oplus$)} &
+\colhead{N} &
+\colhead{Timestep (d)} &
+\colhead{HZ (AU)} &
+\colhead{Water line (AU)}}
+\startdata
+1.0 & 0.5-4 & 4.95  & 75 & 6 & 0.8-1.5 & 2.5 \\
+0.8 & 0.25-2 & 1.98 & 75 & 2.5 & 0.39-0.74 & 1.23 \\
+0.6 & 0.12-1 & 0.75 & 100 & 1.0 & 0.20-0.37 & 0.61 \\
+0.4 & 0.06-1 & 0.53 & 130 & 0.4 & 0.10-0.19 & 0.32 \\
+0.2 & 0.03-0.5 & 0.13 & 190 & 0.2 & 0.05-0.1 & 0.16 \\
+\enddata
+\tablenotetext{1}{Columns are labeled as follows: `$M_\star$' is the stellar
+mass in Solar masses; `Range' is the initial radial distribution of embryos;
+`Mass' represents the total mass in embryos; `N' is the number of embryos;
+`Timestep' is the timestep used for the integration in days; `HZ' is the
+extent of the habitable zone for each case; and `Water line' indicates the
+boundary beyond which embryos are assumed to contain 5\% water by mass.}
+\end{deluxetable}
+\normalsize 
+
+
+\section{results}
+
+\subsection{Analytical Solution}
+
+I accept the typical disk surface density the same as \citet{2007ApJ...669..606R} ($6 g cm^{-2}$) and ten times of it ($60 g cm^{-2}$) separately. The characteristic depletion timescale is set as $1$ M years. I test the giant planet with Jupiter mass with different semi-major axes and eccentricities. The results are shown in Figure \ref{fig: analytical}. 
+
+For the disk with $\Sigma_1 = 6 g cm^{-2}$, only giant planet with $a>10 AU$ could excite the SR in both feeding zone and HZ, regardless of the eccentricities. The eccentricities affect the results by changing the gap structure. 
+
+For the disk with $\Sigma_1 = 60 g cm^{-2}$, SR will always occur in the feeding zone and HZ for $0.6 M_\odot$ host stars, while SR only occur with giant planet with $a>10 AU$ for $1 M_\odot$ host stars.
+
+\subsubsection{Numerical Solution}
+
+I test the model with 1-particle initially located at the water line accompany with a giant planet($a=5 AU; e=0.5$). The results shows the SR occur at around 0.1 M years which coincides with the analytical prediction (Figure \ref{fig:1p_test}). After secular resonance, the embryos migrate inward and goes through the habitable zone, and is finally located inside the habitable zone, indicating it can deliver the water to the region near the HZ. The results suggests the SR could enhance the water delivery around the HZ.
+
+
+However, my N-body simulation with the setting-up shwon in Table \ref{table: para} failed (Figure \ref{fig:multi_sim}). All of the particles go unstable in $\sim 200$ K years around $1M_\odot $ star. The right panel shows the eccentricities of the innermost embryos are excited in advance to the outer ones, which are contradictory with the sweeping secular resonance theory. So my next step is to figure out what problems are in my simulation.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{figures/WX20210605-131228.png}
+    \caption{The time and location of SR occurring in a case where there is a Jupiter-mass planet. \textbf{Top}: The host star is 1 $M_\odot$. The curves represent the time and location of SR occurring. The colors mark the semi-major axes of the giant planets as shown by the text on the figures; the line styles (solid, dashed and dotted) mark the eccentricity of the giant planet shown by the legends. The green band is the habitable zone; the gray region represents the feeding zone where the embryos are distributed initially(Section\ref{sec: setting up}) \ref{sec: setting up}). The blue horizontal line marks the water line. \textbf{Bottom}: Same symbols as the top panels but with the host stars of $0.6 M_\odot$. \textbf{Left}: The typical disk surface density$\Sugma_1$ is $6g cm^{-2}$. \textbf{Right}: The typical disk surface density$\Sugma_1$ is $60g cm^{-2}$. }
+    \label{fig: analytical}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{figures/WX20210605-133606.png}
+    \caption{The evolution of the semi-major axis(orange solid line), periastron and apastron(orange dashed lines). The gray curve is the prediction of the location and time of SR occurring based on the analytical solution. The green band is the habitable zone; the gray region represents the feeding zone where the embryos are distributed initially(Section\ref{sec: setting up}) \ref{sec: setting up}). The blue horizontal line marks the water line.}
+    \label{fig:1p_test}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{figures/WX20210605-134016.png}
+    \caption{The evolution of the semi-major axis(colorful solid line), periastron and apastron(colorful dashed lines). The gray curve is the prediction of the location and time of SR occurring based on the analytical solution. The green band is the habitable zone; the gray region represents the feeding zone where the embryos are distributed initially(Section\ref{sec: setting up}) \ref{sec: setting up}). The blue horizontal line marks the water line.}
+    \label{fig:multi_sim}
+\end{figure}
+
+\section{conclusions}
+
+The analytical solutions suggests SR always occur in the feeding zones and habitable zones, especially with the low-mass stars. The surface density of the disk and the depletion time scale will determine whether the SR could occur within the formation stage of the terrestrial planets.
+
+The 1-particle numerical simulation show that the SR could help enhance the water delivery for habitable planets by exciting the embryos and let the embryos migrate from beyond the water lien to the habitable zone. Therefore, the exsitence of the giant planet could increase the probability of the habitable planets.
+
+
+
+
+
+\bibliography{sample63}{}
+\bibliographystyle{aasjournal}
+
+
+
+
+\end{document}
+
+% End of file `sample63.tex'.

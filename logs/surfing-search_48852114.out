@@ -1,0 +1,8 @@
+shard 3: queued continuation job (chain 4): Submitted batch job 48852116
+shard 3: running 6/36 surfing-search runs with 1 workers
+  nogap/SURF_mJ_3_aemb_1.00_fe_1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_1_aemb_1.00_fe_1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_3_aemb_1.50_fe_1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_10_aemb_1.00_fe_1_tdep_1e+06.bin  t_int=1.2e+07
+  gap/SURF_mJ_10_aemb_1.00_fe_1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_10_aemb_2.00_fe_1_tdep_3e+06.bin  t_int=3.6e+07

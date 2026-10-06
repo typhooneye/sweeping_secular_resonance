@@ -1,0 +1,217 @@
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:153: RuntimeWarning: You have to reset function pointers after creating a reb_simulation struct with a binary file.
+  warnings.warn(message, RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: File in use for Simulationarchive already exists. Snapshots will be appended.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: WHFast convergence issue. Timestep is larger than at least one orbital period.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: At least 10 predictor corrector loops in IAS15 did not converge. This is typically an indication of the timestep being too large.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: At least 10 predictor corrector loops in IAS15 did not converge. This is typically an indication of the timestep being too large.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: WHFast convergence issue. Timestep is larger than at least one orbital period.
+  warnings.warn(msg[1:], RuntimeWarning)
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: WHFast convergence issue. Timestep is larger than at least one orbital period.
+  warnings.warn(msg[1:], RuntimeWarning)
+slurmstepd-midway2-0112: error: *** JOB 49009397 ON midway2-0112 CANCELLED AT 2026-09-13T07:03:20 DUE TO TIME LIMIT ***

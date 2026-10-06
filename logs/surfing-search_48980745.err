@@ -1,0 +1,3 @@
+/home/xuanji/miniconda3/lib/python3.10/site-packages/rebound/simulation.py:259: RuntimeWarning: At least 10 predictor corrector loops in IAS15 did not converge. This is typically an indication of the timestep being too large.
+  warnings.warn(msg[1:], RuntimeWarning)
+slurmstepd-midway2-0152: error: *** JOB 48980745 ON midway2-0152 CANCELLED AT 2026-09-08T12:30:39 DUE TO TIME LIMIT ***

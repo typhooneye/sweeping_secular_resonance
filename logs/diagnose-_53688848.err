@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/var/spool/slurm/d/job53688848/slurm_script", line 42, in <module>
+    if str(REPO_DIR) not in sys.path:
+                            ^^^
+NameError: name 'sys' is not defined

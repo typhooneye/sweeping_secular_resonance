@@ -1,0 +1,7 @@
+running 4 component tests with 4 workers
+output_dir=/project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/rocky_precession_components_run1
+rocky + giant: measured=-8.05478764e-06, analytical=3.88487112e-05, relative_error=-120.734%
+rocky + no-gap disk: measured=1.91837595e-05, analytical=-2.26847392e-05, relative_error=-184.567%
+rocky + giant + depleted gap: measured=-3.16026362e-05, analytical=1.60204856e-05, relative_error=-297.264%
+rocky + GR: measured=1.86176209e-07, analytical=1.88495559e-07, relative_error=-1.230%
+figure=/project/abbot/xuanji/4.SSR/sweeping_secular_resonance/figure/rocky_precession_components.png

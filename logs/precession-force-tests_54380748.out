@@ -1,0 +1,27 @@
+running 11 experiments with 11 workers
+output_dir=/project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests
+finished giant_control: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/giant_control.bin
+finished pair_control: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/pair_control.bin
+finished rocky_giant: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/rocky_giant.bin
+finished rocky_control: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/rocky_control.bin
+finished giant_disk_depleted: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/giant_disk_depleted.bin
+finished giant_disk_empty: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/giant_disk_empty.bin
+finished rocky_disk_no_gap: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/rocky_disk_no_gap.bin
+finished rocky_gr: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/rocky_gr.bin
+finished pair_disk_empty: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/pair_disk_empty.bin
+finished pair_disk_depleted: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/pair_disk_depleted.bin
+finished pair_full_depleted_gr: /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/pair_full_depleted_gr.bin
+g_i,J: measured=+3.888563e-05, analytical=+3.884871e-05, relative_error=+0.095%
+g_i,disk no gap: measured=-4.133519e-03, analytical=-4.129997e-03, relative_error=+0.085%
+g_J,disk empty gap: measured=+1.766802e-03, analytical=+1.665977e-03, relative_error=+6.052%
+g_J,disk depleted gap: measured=+1.514722e-03, analytical=+1.416779e-03, relative_error=+6.913%
+g_i,disk empty gap: measured=-4.138000e-03, analytical=-4.159022e-03, relative_error=-0.505%
+g_J,disk empty gap (pair): measured=+1.766980e-03, analytical=+1.665977e-03, relative_error=+6.063%
+g_i,disk depleted gap: measured=-4.135000e-03, analytical=-4.156120e-03, relative_error=-0.508%
+g_J,disk depleted gap (pair): measured=+1.514918e-03, analytical=+1.416779e-03, relative_error=+6.927%
+g_i,GR: measured=+1.861296e-07, analytical=+1.884956e-07, relative_error=-1.255%
+full additional force on rocky: measured=-4.134813e-03, analytical=-4.155931e-03, relative_error=-0.508%
+full additional force on giant: measured=+1.514921e-03, analytical=+1.416783e-03, relative_error=+6.927%
+summary=/project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/precession_force_tests/precession_rate_summary.csv
+phase_figure=/project/abbot/xuanji/4.SSR/sweeping_secular_resonance/figure/precession_force_tests/precession_phase_timeseries.png
+comparison_figure=/project/abbot/xuanji/4.SSR/sweeping_secular_resonance/figure/precession_force_tests/precession_rate_comparison.png

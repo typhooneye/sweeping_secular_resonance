@@ -1,0 +1,5 @@
+running 2 extreme SR runs with 2 workers
+  /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/rebound_sr_extreme/robust_mj10_aemb1_sig1700/single_giant_aj_05.00_ej_0.50_tdep_010.0kyr_nemb_1_aemb_1.00.bin (dens0=1.912e-04 Msun/AU^2)
+  /project/abbot/xuanji/4.SSR/sweeping_secular_resonance/output/rebound_sr_extreme/ultrafast_ej02_mj10_aemb1.2_sig500/single_giant_aj_05.00_ej_0.20_tdep_010.0kyr_nemb_1_aemb_1.20.bin (dens0=5.625e-05 Msun/AU^2)
+finished: single_giant_aj_05.00_ej_0.50_tdep_010.0kyr_nemb_1_aemb_1.00.bin
+finished: single_giant_aj_05.00_ej_0.20_tdep_010.0kyr_nemb_1_aemb_1.20.bin

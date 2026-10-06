@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/var/spool/slurm/d/job53525427/slurm_script", line 151, in <module>
+    main()
+  File "/var/spool/slurm/d/job53525427/slurm_script", line 139, in main
+    ncpus = int(os.environ.get("SLURM_JOB_CPUS_PER_NODE", multiprocessing.cpu_count()))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '6,5,2,5,6'

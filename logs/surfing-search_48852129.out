@@ -1,0 +1,12 @@
+shard 0: continuation already queued for job 48852129 (requeue) -- skipping
+shard 0: running 10/54 surfing-search runs with 10 workers
+  nogap/SURF_mJ_1_aemb_1.00_fe_1_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  nogap/SURF_mJ_1_aemb_1.00_fe_0_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  nogap/SURF_mJ_10_aemb_1.00_fe_0.5_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_1_aemb_1.00_fe_1_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_1_aemb_1.00_fe_0_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_1_aemb_1.50_fe_0.5_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_10_aemb_1.00_fe_0.5_ej_0.1_tdep_1e+06.bin  t_int=1.2e+07
+  gap/SURF_mJ_10_aemb_1.00_fe_0.5_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_10_aemb_1.50_fe_1_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07
+  gap/SURF_mJ_10_aemb_1.50_fe_0_ej_0.1_tdep_3e+06.bin  t_int=3.6e+07

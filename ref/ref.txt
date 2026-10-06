@@ -1,0 +1,545 @@
+\documentclass[preprint2]{aastex63}
+\usepackage{graphicx}
+
+\usepackage{xspace}
+
+% \usepackage{datetime}
+% \usepackage{amsmath,amssymb,amsthm}
+% \usepackage{natbib}
+% \usepackage{graphicx}
+% \usepackage{CJKutf8}
+% \usepackage{appendix}
+
+\newcommand{\mstar}{\ensuremath{M_\star}}
+\newcommand{\msun}{\ensuremath{M_\odot}}
+\newcommand{\mjup}{\ensuremath{M_j}}
+\newcommand{\ms}{\ensuremath{\mathrm{m\,s^{-1}}}}
+% make red text with \red{some text} - note: doesn't work with paragraph breaks
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+%% Define new commands here
+\newcommand\latex{La\TeX}
+
+%% Tells LaTeX to search for image files in the
+%% current directory as well as in the figures/ folder.
+\graphicspath{{./}{figures/}}
+
+
+
+
+\begin{document}
+
+
+\title{HR 5183}
+\author{Xuan Ji}
+\date{May 2020}
+
+\begin{abstract}
+    
+\end{abstract}
+
+Outline
+\begin{enumerate}
+    \item Introduction
+    \begin{itemize}
+        \item The statistical results of Zhu and Wu (2019)
+        \begin{itemize}
+            \item The range of the locations of the inner super-Earths
+            \item The separations of two planets
+            \item Multi-planets' configuration?
+        \end{itemize}
+        \item possible theoretical explanations. 
+        \begin{itemize}
+            \item How the outer Jupiter influence the formation of the inner super-Earth.
+            \item How embryos collide and become protoplanet? 
+                \begin{itemize}
+                    \item rate/possibility 
+                    \item timescale
+                    \item SR's role
+                \end{itemize}
+            \item The location where the planet stops migration./The scope of the secular resonance.
+        \end{itemize}
+        \item Current observations of the configurations of planetary systems
+        \begin{itemize}
+            \item HR5183: Cold Jupiter with high eccentricity (strong SR)
+            \item HD30177/HD 50499: two Cold-Jupiters
+            \item the possibility that there is an undetected super Earth
+        \end{itemize}
+    \end{itemize}
+    \item Computational Model
+    \begin{itemize}
+        \item Physical Basis of the Model
+        \item Numerical Model
+        \begin{itemize}
+            \item Numerical Method for gravitational interactions
+            \item Contribution of Gravity and Damping by the Gas Disk
+        \end{itemize}
+    \end{itemize}
+    \item Numerical Results
+    \begin{itemize}
+        \item Single Cold-Jupiter
+        \begin{itemize}
+            \item single embryos
+            \item multi-embryos
+        \end{itemize}
+        \item Double Cold-Jupiters
+        \begin{itemize}
+            \item single embryos
+            \item multi-embryos
+        \end{itemize}
+    \end{itemize}
+    \item Statistical Analysis
+    \begin{itemize}
+        \item Single Cold-Jupiter
+        \begin{itemize}
+            \item single embryo
+            \begin{itemize}
+                    \item Dependence on the Gas Giant
+                    \item Dependence on the initial location of the Super-Earth
+            \end{itemize}
+            \item multi-embryos
+            \begin{itemize}
+                    \item Dependence on the Gas Giant
+                    \item Dependence on the initial location of the Super-Earth
+                    \item Dependence on the separation of the Super-Earths
+            \end{itemize}
+        \end{itemize}
+        \item Double Cold-Jupiters
+        \begin{itemize}
+            \item single embryo
+            \begin{itemize}
+                    \item Dependence on the Gas Giant
+                    \item Dependence on the initial location of the Super-Earth
+            \end{itemize}
+            \item multi-embryos
+            \begin{itemize}
+                    \item Dependence on the Gas Giant
+                    \item Dependence on the initial location of the Super-Earth
+                    \item Dependence on the separation of the Super-Earths
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Summary
+\end{enumerate}
+\newpage
+
+% \section{Statement of the work}
+
+% HR 5183 b was discovered by \cite{2019arXiv190809925B} based on the long-term radial velocity monitoring. It is a giant planet($> 3M_j$) on a highly eccentric($e~0.84$) orbit with the semi-major axis of 18AU, which means that the planet’s orbit range from distances inside the orbit of Jupiter to outside the orbit of Neptune. There has been no other planet discovered in this system yet. However, in this work, I assumed that there is an inner Earth-like planet c, which will be highly perturbed by the eccentric giant planet. Besides the gravitational interaction with planets and host stars, we also take the proto-planetary disk into account, and perform simulation to investigate the orbital evolution in the early age. We assume the gas in the disk is depleted over a characteristic timescale($\tau_{dep}$). The exchanges of angular momentum between two planets and between planets and disk play ahttps://www.overleaf.com/project/5eb29bc1bff8620001fdcfb4 significant role in the evolution, which could result in the secular resonance (SR). With such a high eccentricity, the giant planet b exert a secular perturbation on inner Earth-like planet c. Consequently, the longitudes of periastron of planet c precesses and its eccentricity will be modulated. In addition, due to the self-gravity of the gas disk, planet b's orbits also precess. When two precession frequencies match, the SR excites  planet c’ eccentricity as angular momentum is monotonically transferred from planet c to planet b. We aim to constrain the possible final stable orbit of planet c.
+
+% \section{Parameter Settings}
+% The stellar parameters are obtained from observation \citep{2019arXiv190809925B}, shown in Table \ref{stardata}
+
+
+% \begin{deluxetable}{ccc}[h]
+% \tablecaption{Stellar Properties \label{tb:st_props}\citet{2019arXiv190809925B}\label{stardata}}
+% \tabletypesize{\footnotesize}
+% \tablehead{
+%   \colhead{Parameter} & 
+%   \colhead{Value} & 
+%   \colhead{Unit}
+% }
+% \startdata
+% $R_*$ & $1.53^{+0.06}_{-0.05}$ & $R_\odot$ \\
+% $M_*$ & $1.07\pm0.04$ & $M_\odot$ \\
+% \enddata
+
+% \end{deluxetable}
+
+% The parameters of planet b are fitted and derived from observation  \citep{2019arXiv190809925B}, shown in Table \ref{p1data}
+
+
+% \begin{deluxetable}{ccc}[h]
+% \tablecaption{ Parameters of Planet b}
+% \label{p1data}
+% \tabletypesize{\footnotesize}
+% \tablehead{
+%   \colhead{Parameter} & 
+%   \colhead{Median Value \& 68\% CI} & 
+%   \colhead{Unit}
+% }
+
+% \startdata
+% $P_b$ &$74^{+43}_{-22}$  & yr \\
+% $e_b$ &$0.84\pm0.04$& \\
+% $\omega_b$ & $-0.35\pm0.03$& rad  \\
+% $M_b*$ &$3.23^{+0.15}_{-0.14}$ &$M_b$ \\
+% $a_b$ & $18^{+6}_{-4}$  & au \\
+% \enddata
+% \end{deluxetable}
+
+% where the value of $M_b$ is not accurate but assumed based on the observational value of $M_b \sin{i}$
+
+% The parameters of the hypothetical Earth-like planet c and the proto-planetary disk are assumed as \ref{p2data} and \ref{diskdata}
+
+
+% \begin{deluxetable}{ccc}[h]
+% \tablecaption{Parameters of the hypothetical planet c}
+% \label{p2data}
+% \tabletypesize{\footnotesize}
+% \tablehead{
+%   \colhead{Parameter} & 
+%   \colhead{Value }& 
+%   \colhead{Unit}
+% }
+
+% \startdata
+% $e_c$ & 0.0& \\
+% $\omega_c$ & 0  & rad  \\
+% $M \sin{i}_c$ &1   &$M_{Earth}$ \\
+% $a_c$ &1   & au \\
+% \enddata
+% \end{deluxetable}
+
+
+% \begin{deluxetable}{ccc}[h]
+% \tablecaption{Disk Parameters\label{diskdata}}
+% \tabletypesize{\footnotesize}
+% \tablehead{
+%   \colhead{Parameter} & 
+%   \colhead{Value} 
+%   \colhead{Unit}
+% }
+
+% \startdata
+% $\tau_{dep}$ & 10^6 & years \\
+% $dens0$ & 10^3 & g\cdot cm^{-2} \\
+% \enddata
+% \end{deluxetable}
+
+
+\section{Introduction}
+\section{Computational Model}
+
+\subsection{Physical Basis of the Model}
+
+We apply the dynamical shake-up model to explain the super Earth-cold Jupiter relations and investigate the most possible configurations of those planetary systems hosting both cold Jupiter and super Earth. This model considers the stage of gas depletion after the formation of a Jupiter-like planet at a long distance from the host star when the inner embryos suffer the effect of secular resonance combined with Type I damping. During that stage, the eccentricities of the embryos are excited and they have a good chance to closely encounter other embryos, which leads to not only orbit crossing but also collisions, merger and scatterings. Several collisions could cause the formation of super Earths. At the same time, they migrate towards the star due to the damping caused by the residual disk until the disk is completely depleted, which could explain the relatively close location and the mearly circular orbit of the super Earth. 
+
+The secular resonance is key to the formation of the super Earth. With a finite eccentricity, the cold Jupiter $j$ (with mas $m_j$, semimajor axis $a_j$, mean motion $n_j$, eccentricity $e_j$, and longitudes of periastron$\omega_j$) exert a secular perturbation on the inner embryos $i$ (with mass $m_i$, semimajor axis $a_i$, mean motion $n_i$, eccentricity $e_i$, and longitudes of periastron$\omega_i$), resulting in the precession of their longitudes of periastron and the modulation of their eccentricities. The precession is at a rate
+
+\begin{equation}
+\frac{d\omega_{i,j}}{dt} = \frac{1}{t_{i,j}}[1+C_{i,j}(\frac{e_j}{e_i}cos(\omega_i-\omega_j)]
+\end{equation}
+where 
+
+\begin{equation}
+t_{i,j}^{-1} = \frac{Gm_j\alpha b_{3/2}^{(1)}}{4n_i a_i^2max(a_i,a_j)} \equiv g_{i,j} 
+\end{equation}
+
+is a secular part of the precession of planet $i$ introduced by planet $j$, $\alpha$ = min($a_i$,$a_j$)/ max($a_i$,$a_j$) $C_{i,j} \equiv b_{3/2}^{(2)}/b_{3/2}^{(1)}$, where $b_s^(j)$ is the Laplace coefficient and it can be estimated as[Solar System Dynamics]: 
+
+\begin{eqnarray}
+     b_s^{(k)}(\alpha)& = &\frac{s(s+1)...(s+k-1)}{1\cdot 2\cdot ... \cdot k} \alpha^k  \times [1 + \frac{s(s+k)}{1(k+1)} \alpha^2 \nonumber \\
+     &+& \frac{s(s+1)(s+k)(s+k+1)}{1 \cdot 2(k+1)(k+2)}\alpha^4+...]
+\end{eqnarray}
+
+As we focus on the orbital evolution of the embryos interior to the cold Jupiter, only accept the first ten terms of this expanding are taken into account. Noted that the effects on the cold Jupiter caused by the gravitational interaction with the embryos are so slight that we neglect it. 
+
+Under the effect of the gravitational potential of the disk, the embryos and gas giants also undergo precessions. The initial apsidal precession rate of the embryos is 
+
+\begin{equation}
+\label{eq:disk_i}
+    g_{i,disk} \equiv \frac{d\omega_{i,disk}}{dt} \sim -Z_k[\frac{\pi G\Sigma_{init}(a_i) }{n_i a_i}]
+\end{equation}
+
+where $\Sigma_{init} = \Sigma_0(\frac{a}{1AU})^k$ is the initial surface density of the gas at distance $a$ and $\Sigma_0 = 50g cm^{-2}$, and $Z_k$ is a constant. Assuming a minmum-mass disk, $Z_{3/2} = 1.094$. (How could I obtain the value of Zk for k=1.01?)
+
+During the depletion of the disk, the rate ($g'_{i,disk}$) changes under the power law,
+
+\begin{equation}
+    g'_{i,disk}=g_{i,disk}\rm{exp} (-\frac{\emph{-t}}{\tau_n})
+\end{equation}
+where $tau_n$ is the depletion timescale of the gas disk
+
+Once the precession rate of the embryos match that of the cold Jupiter, they will experience the secular resonance in which the phase ($\omega_i -\omega_j$) is locked. Therefore, the angular momentum is monotonically transferred from the embryos to the cold Jupiter and the eccentricity of the embryos will be excited. The resonance condition should be
+
+\begin{equation}
+    g_{i,j} + g'_{i,disk} = g'_{j,disk}  
+\end{equation}
+
+Noted that precession caused by the disk is much larger than that introduced by the giant planet everywhere in the minimum-mass nebula. Therefore, only when the disk is under depletion, can the maginitude of these precession rates be comparable to each other and then can the secular resonance occur. The time ($t_R$) when the secular resonance passes $a AU$ can be calculated as 
+
+\begin{equation}
+    u_R \equiv exp(-\frac{t_R}{\tau_n}) = \frac{g_{i,j}}{g_{j,disk}-g_{i,disk}}
+\end{equation}
+
+
+
+\subsubsection{Gap around the cold Jupiter}
+
+When the cold Jupiter gets massive enough, a gap is formed with a radial extend between $R_in$ and $R_out$. ((Goldreich \& Tremaine 1980))
+
+\begin{eqnarray}
+    R_{\rm in} = a_j(1-e_j)(1 -(\frac{M_j}{3M_*})^{1/3}); \nonumber \\
+    R_{\rm out} = a_j(1+e_j)(1 +(\frac{M_j}{3M_*})^{1/3});
+\label{eq:gap_radius}
+\end{eqnarray}
+
+Surrounded by a gap, the apsidal precession rate of the cold Jupiter caused by the disk is
+
+\begin{eqnarray}
+\label{eq:disk_j_gap}
+    g_{j,disk}&=&\frac{d\omega_j}{dt} \sim (\frac{\pi G \Sigma_{init}(a_j)}{n_j a_j})\Sigma_{l=1}^{\infty}l(2l+1)A_l \nonumber \\
+    & \times& [\frac{(R_{\rm in}/a)^{2l+2-k}}{2l+2-k}+\frac{(a/R_{\rm out})^{2l-1+k}}{2l-1+k}]
+\end{eqnarray}
+where $A_l = [(2l)!/2^{2l}/(l!)^2]^2$. During the disk depletion, the rate decrease as $g'_{j,disk} = g_{j,disk}exp(-t/\tau_n)$.
+
+The change of the disk structure could also influence the precession rate of the interior embryos, it will be modified depending on the different locations to the gap. If the embryos are interior to the inner edge of the gap, the precession rate introduced by the disk is
+
+\begin{eqnarray}
+\label{eq:i_disk_ingap}
+    g_{i,disk} &\equiv& \frac{d\omega_{i,disk}}{dt} \sim -\frac{\pi G\Sigma_{init}(a_i) }{n_i a_i}\times(Z_k+ \nonumber \\
+    &\Sigma_{l=1}^{\infty} &l(2l+1)A_l  \frac{(a_i/R_{\rm in})^{2l-1+k}}{2l-1+k})
+\end{eqnarray}
+
+where $Z_k$ is the same constant in equation (\ref{eq:disk_i}), and $A_l$ is described in equation (\ref{eq:disk_j_gap}). For embryos located in the gap range, its precession rate caused by the disk is the same as the Cold Jupiter (equation (\ref{eq:disk_j_gap})). As for embryos exterior to the outer edge of the gap, which we do not take into consideration in our numerical simulation, the rate is
+
+\begin{eqnarray}
+\label{eq:i_disk_outgap}
+    g_{i,disk} &\equiv& \frac{d\omega_{i,disk}}{dt} \sim -\frac{\pi G\Sigma_{init}(a_i) }{n_i a_i}\times(Z_k + \nonumber \\ &\Sigma_{l=1}^{\infty} & l(2l+1)A_l  \frac{(R_{\rm out}/a_i)^{2l+2-k}}{2l+2-k})
+\end{eqnarray}
+
+
+
+
+
+\subsubsection{Two Cold Jupiter}
+
+For the systems hosting two gas giant planets ($j$, $j+$; planet $j$ is closer to the host star), embryo $i$ encounters a secular resonance with the giant $j$ when its $g_i = g_j$. To calculate $g_j$, besides the above analysis, its gravitational interaction with planet $j+$ should be taken into account. The precession of planet $j$ due to planet $j+$ ($g_{j,j+}$) is
+
+\begin{equation}
+    g_{j,j+} = -\frac{G \textbf b_{3/2}^{(2)}(\alpha_{j,j+})}{4a_{j+}^3}\sqrt{\frac{m_j m_{j+}}{n_j n_{j+}}}
+\end{equation}
+
+The time when embryos ($i$) encounter a secular resonance with planet $b$ ($\nu_j$) is \citep{2005ApJ...635..578N}
+
+\begin{equation}
+    u_R \equiv exp(-\frac{t_R}{\tau_n}) = \frac{g_{i,j}+g_{i,j+}-g_{j,j+}}{g_{j,disk}-g_{i,disk}}
+\end{equation}
+
+where $g_{j,disk}$ can be calculated in the disk with or without the gap separately. For the cold Jupiters massive enough to open the gap, we assume that a single gap was formed covering both giant planets(BRYDEN 2000) and range from $R_{\rm in*}$ to $R_{\rm out *}$
+
+\begin{eqnarray}
+    R_{\rm in*} = a_j(1-e_j)(1 -(\frac{M_j}{3M_*})^{1/3}); \nonumber\\
+    R_{\rm out*} = a_{j+}(1+e_{j+})(1 +(\frac{M_{j+}}{3M_*})^{1/3});
+\label{eq:gap_radius_two_p}
+\end{eqnarray}
+
+In this condition where disk has a gap, the precession rate of the embryos refer to equation (\ref{eq:i_disk_ingap}) and (\ref{eq:i_disk_outgap}). 
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{figure/analytical.png}
+    \caption{Location of the secular resonances for cases where there is no gap (blue) in the disk, where a giant planet open a gap (orange), and where two giant planets open a wide gap (green). The Line patterns (solid line, dashed line, dash-dotted line, dotted line) represent the different power (k = 1, 3/2, 2, and 5/2) of the surface density of the gas disk, respectively,  }
+    \label{fig:analytical}
+\end{figure}
+
+
+
+
+
+\subsection{Numerical Model}
+Our orbital evolution simulations were undertaken using the REBOUND package which can integrate the motion of particles under the influence of gravity. In this way, the gravitational interaction among star and planets are taken into account in our simulation.
+
+In addition to the star-planet, planet-planet interaction, the disk-planet interaction also play a key role in the dynamical processes. 
+
+We accept the disk model introduced in \cite{2017ApJ...836..207Z} and characterize the contribution of the gravity from the disk for planet b and planet c separately, as planet b is massive enough to open a gap which will influence the apsidal precession of the planet. 
+
+The thin-disk model with an axisymmetric surface density distribution, $\Sigma(r, t)$ at the radius $r$ and time $t$, id of the form
+
+\begin{equation}
+\Sigma(r,t)=\Sigma(r_0,0)f_{dep}(t)(r/r_0)^{-k}
+\end{equation}
+
+where $r_0 =1 au$ and $f_{dep}(t)=exp(-t/T_{dep})$ is the time-dependent depletion function of the gas disk. In our model(ref needed), k=1.01 with an initial surface density $ \Sigma{ (r_0, 0)} = 50 g\cdot cm^{-2}$ at the location of $r = 1 au$.
+
+For planet b, the force from disk potential should be \citep{nagasawaida2000,ward1981}:
+\begin{eqnarray}
+F(r,t) = & 2 & \pi G \Sigma(r,t) \sum_{n=0}^{\infty} A_{n}\{ 
+		( \frac{2n}         {2n-1+k}       )
+		( \frac{r}          {R_{\rm out}}  )^{2n-1+k} \nonumber \\
+	  & - &( \frac{2n+1}       {2n+2-k}      )
+  	    ( \frac{R_{\rm in}} {r}            )^{2n+2-k} 	\}.
+\end{eqnarray}
+
+where $G$ is the gravitational constant, $A_n$ is a constant.
+
+
+For planet c, the apsidal precession caused by the gas disk is dominated by the gas in their neighborhood. We also consider the condition where planet b is close to $R_{in}$, so the force expression is:
+
+\begin{eqnarray}
+ F  &=&  - 4\pi G \Sigma(r,t)\{
+	Z_k + \nonumber \\
+	&\sum &_{n=0}^{\infty} A_{n} 
+	(\frac{n}{2n-1+k}) 
+	(\frac{r}{R_{\rm in}})^{2n-1+k} \}. 
+\label {eq:f_pd}
+\end{eqnarray}
+
+In addition, the eccentricity of planet c is also damped and excited through the interaction with the disk  \citep{goldreichtremaine1980, ward1997}. With a simple approximation (Zhou et al. 2007), the force cause the eccentricity damping can be written as:
+
+\begin{equation}
+{\bf F}_{\rm D} = - \frac{{\bf V} - {\bf V}_{\rm kep}^{\prime}}
+{T_{\rm damp}/f_e} \quad .
+\label{eq:dragforce}
+\end{equation}
+
+where $f_e$ is the coefficient and we set it as 1. We adopted the timescale of Type 1 migration to characterize the eccentricity damping  mechanism \citep{artymowicz1993,ward1993}:
+
+\begin{eqnarray} 
+T_{\rm damp,t} \simeq 
+	\left(\frac{M_{\ast}}{M_{p}}\right)
+	\left(\frac{M_{\ast}}{\Sigma a^2} \right)
+	\left(\frac{c_s}{a\Omega_K}\right)^4 \Omega_{k}^{-1} 
+\label{eq:t2}
+\end{eqnarray}
+
+where $\Omega_k = (GM_*/a^3)^{1/2}$ is the Kepler frequency, and $c_s = H(r)\cdot \Omega_k$ is the sound speed of the gas disk. $H(r) = H_0\cdot (\frac{r_p}{1au})^{1.25}$ is the disk scale height and we accept $H_0 = 0.05 au$ in this work.
+
+\section{Cases Description}
+
+
+
+\begin{deluxetable*}{cccccccccc}
+\tabletypesize{\scriptsize}
+\tablewidth{0pt} 
+\tablenum{1}
+\tablecaption{Eccentric (Cold) Jupiter+Super Earth}
+\tablehead{
+\colhead{Case Number}&\colhead{Host Name} &\colhead{\mstar}&\colhead{$R_*$}& \colhead{Planet Name} &\colhead{  } &\colhead{Planet Mass}& \colhead{Planet Radius}& \colhead{Semi-Major Axis} & \colhead{Eccentricity}  \\
+\colhead{    } &\colhead{    } &\colhead{(\msun)} &\colhead{($R_\sun$)} & \colhead{    }& \colhead{  }&\colhead{(\mjup)}& \colhead{($R_J$)}& \colhead{(AU)} & \colhead{    } }
+\startdata 
+\hline
+\hline
+(1)&K2-312/ HD 80653&1.18&1.22& K2-312c&{  } &5.41 & $-$  & 1.961 &0.853 \\
+{}&{}&{}& {}&K2-312b&{} &0.018 & 0.144  & 0.017 & $-$ \\
+\hline
+(2)&TOI-2134&0.74&0.71& TOI-2134c&{  } &0.13 & 0.65  & 0.36 &0.67 \\
+{}&{}&{}& {}&TOI-2134b&{} &0.029 & 0.240  & 0.07 & 0.06 \\
+\enddata
+
+\end{deluxetable*}
+
+
+\begin{deluxetable*}{cccccccccc}
+\tabletypesize{\scriptsize}
+\tablewidth{0pt} 
+\tablenum{1}
+\tablecaption{Eccentric Cold Jupiter(s) Only}
+\tablehead{
+\colhead{Case Number}&\colhead{Host Name} &\colhead{\mstar}&\colhead{$R_*$}& \colhead{Planet Name} &\colhead{  } &\colhead{Planet Mass}& \colhead{Planet Radius}& \colhead{Semi-Major Axis} & \colhead{Eccentricity}  \\
+\colhead{    } &\colhead{    } &\colhead{(\msun)} &\colhead{($R_\sun$)} & \colhead{    }& \colhead{  }&\colhead{(\mjup)}& \colhead{($R_J$)}& \colhead{(AU)} & \colhead{    } }
+\startdata 
+\hline
+\hline
+(1)&HR 5183 &1.07&1.53& HR5183 b&{  } &3.23 & $-$  & 18 &0.84 \\
+\hline
+(2)&AU mic &0.5&0.75& AU mic b &{  } &$<0.18$ & 0.375 & 0.066 & 0.10 \\
+\hline
+{    }&{    } &{}&{}& {Proxima b} &$e_{i}$&0.003&{$-$}& 0.048 & {0}\\
+(3)&{Proxima Cen} &0.12&0.141&{    }  &$c_{i}$&0.003&$-$&$0.048^{ii}$&0.17\\
+{    }&{    } &{}&{}&Proxima c &$e_{i}$&0.018&$-$&1.48&0\\
+{    }&{    }&{}&{} &{    }  &$c_{i}$&0.018&$-$&$1.45^{ii}$&0.41\\
+\hline
+\hline
+(4)&HD 30147 &1.05&1.02& HD 30147 b&{  } &8.62 & $-$  & 3.7 &0.16 \\
+{}&{} &{}&{}& HD 30147 c&{  } &7.60 & $-$  & 9.90 &0.22 \\
+(5)&HD 50499 &1.25&1.35& HD 50499 b&{  } &1.63 & $-$  & 3.83 &0.26 \\
+{}&{} &{}&{}& HD 50499 c&{  } &2.93 & $-$  & 9.02 &0.00 \\
+\enddata
+
+\end{deluxetable*}
+
+
+% {HR 5183} & {HR5183 b}&{} &{3.23$^{+0.15}_{-0.14}$} &{ $/$ } &{ 18$^{+6}_{-4}$} &{$0.84\pm 0.04$} \\
+% \hline
+% {AU mic} & {AU mic b} &<0.18 & $0.375\pm 0.018$ & $0.066^{+0.007}_{-0.006}$ & $0.10^{+0.17}_{-0.09}$ \\
+% \hline
+% {} &{Proxima Cen b} &{e*}&{0.003}&{$/$}&{0.048\pm 0.002}&{0}\\
+% {Proxima Cen} &{} &{c*}&{}&{}&{}&{}\\
+% {} &{Proxima Cen c} &{e*}&{0.018}&{}&{}&{}\\
+% {} &{} &{} &{c*}&{}&{}&{}&{}\\
+
+\section{Results}
+\subsection{Single Cold-Jupiter}
+\subsubsection{Single embryo}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{figure/1pt1M_rc.png}
+    \caption{\textbf{HR5183:} Evolution of the perihelion, semi-major axis, and aphelion of the detected giant planet and embryos with different initial semi-major axis in the case of HR5183 where the gas disk has a gap between $R_{in}$ and $R_{out}$ according to equation (\ref{eq:gap_radius}). The gray curves represent the analytical location of the secular resonance.}
+    \label{fig:1pt1M_gap}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{figure/1pt1M_rc_nogaparchive_2planets_2.0.bina0.png}
+    \caption{\textbf{HR5183:} Evolution of the perihelion, semi-major axis, and aphelion of the detected giant planet and embryos embryos with different initial semi-major axis in the case of HR5183 where there is no gap in the disk. The gray curves represent the analytical location of the secular resonance.}
+    \label{fig:1pt1M_nogap}
+\end{figure}
+
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.7]{figure/Proxie.bina0.png}
+    \caption{\textbf{Proxima:} Evolution of the perihelion, semi-major axis, and aphelion of the detected Super Earth and the hypothetical Jupiter, in the case of Proxima. The gray curves represent the analytical location of the secular resonance. \textbf{(i):} Planets with nearly circular orbits according to Table 1 from \citet{2020SciA....6.7467D} \textbf{(ii):} Planets with eccentric orbits according to Table S1 from \citet{2020SciA....6.7467D} }
+    \label{fig:Aumic_1p}
+\end{figure*}
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.7]{figure/Aumic_e0a05.bina0.png}
+    \caption{\textbf{Au Mic:} Evolution of the perihelion, semi-major axis, and aphelion of the detected Super Earth and the hypothetical Jupiter, in the case of Au Mic. The gray curves represent the analytical location of the secular resonance. \textbf{(i):} Planet c is the detected planet initially with the observed physical and orbital parameters while planet b is a hypothetical Jupiter initially at 1AU with the eccentricity of 0.5 (The settings of planet b is the same as (ii) and (iii)). \textbf{(ii):} Planet c is the detected planet with the observed physical parameters but with the initial eccentricity of 0. \textbf{(iii):} Planet c is the detected planet with the observed physical parameters but at 1 AU and with the initial eccentricity of 0.}
+    \label{fig:Aumic_4p}
+\end{figure*}
+
+
+\subsubsection{Multiple embryo}
+
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.7]{figure/Aumic_e0a02_k6_4p.bina0.png}
+    \caption{\textbf{Au Mic:} Evolution of the perihelion, semi-major axis, and aphelion of the the hypothetical embryos and Jupiter, in the case of Au Mic. The gray curves represent the analytical location of the secular resonance. The settings of planet b for all sub-cases is the same as Figure \ref{fig:Aumic_1p} \textbf{(i):} There are 4 embryos with separation of 10 Hill Radius, and the first embryos is located at 0.1 AU.  \textbf{(ii):} There are 4 embryos with separation of 6 Hill Radius, and the first embryos is located at 0.2 AU.}
+    \label{fig:Aumic_4p}
+\end{figure*}
+
+\subsection{Double Cold-Jupiter}
+\subsubsection{Single embryo}
+
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.8]{figure/2gpk101pt1Marchive_4planets_nogap.bina0.pdf}
+    \caption{Evolution of the perihelion, semi-major axis, and aphelion of embryos with different initial semi-major axis in the case of HD50499. The upper panel shows the orbital evolution if the gas disk has a gap between $R_{in}$ and $R_{out}$ according to equation (\ref{eq:gap_radius_two_p}), while the lower panel shows that if there is no gap formed in the gas disk. The red curve represent the gap boundaries and the green curves represent the analytical location of the secular resonance.}
+    \label{fig:2gp}
+\end{figure*}
+
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.8]{figure/2sgpk101pt1Marchive_4planets_nogap.bina0.pdf}
+    \caption{Evolution of the perihelion, semi-major axis, and aphelion of embryos with different initial semi-major axis in the case of HD30177. The upper panel shows the orbital evolution if the gas disk has a gap between $R_{in}$ and $R_{out}$ according to equation (\ref{eq:gap_radius_two_p}), while the lower panel shows that if there is no gap formed in the gas disk. The red curve represent the gap boundaries and the green curves represent the analytical location of the secular resonance.}
+    \label{fig:2sgp}
+\end{figure*}
+
+\subsubsection{Multiple embryo}
+
+
+
+\newpage
+\begin{thebibliography}{}
+
+\bibitem[Blunt et al.(2019)]{2019arXiv190809925B} Blunt, S., Endl, M., Weiss, L.~M., et al.\ 2019, arXiv e-prints, arXiv:1908.09925
+\bibitem[Zheng et al.(2017)]{2017ApJ...836..207Z} Zheng, X., Lin, D.~N.~C., \& Kouwenhoven, M.~B.~N.\ 2017, \apj, 836, 207
+\bibitem[Nagasawa et al.(2005)]{2005ApJ...635..578N} Nagasawa, M., Lin, D.~N.~C., \& Thommes, E.\ 2005, \apj, 635, 578
+\bibitem[Ward(1981)]{ward1981} Ward, W. R. 1981, Icarus, 47, 234
+\bibitem[Nagasawa \& Ida(2000)]{nagasawaida2000} Nagasawa, M., \& Ida, S. 
+2000, AJ, 120, 3311
+\bibitem[Ward(1997)]{ward1997} Ward, W. R. 1997, Icarus, 126, 261
+\bibitem[Goldreich \& Tremaine(1980)] {goldreichtremaine1980} Goldreich, P., \& Tremaine, S. 1980, ApJ, 241, 425
+\bibitem[Zhou et al.(2007)]{zhou2007} Zhou, J. L., Lin, D. N. C., \& 
+Sun, Y. S. 2007, ApJ, 666, 423
+\bibitem[Artymowicz(1993)]{artymowicz1993} Artymowicz, P. 1993, ApJ, 
+419, 166
+\bibitem[Ward(1993)]{ward1993} Ward, W. R. 1993, Icarus, 106, 274 
+\
+\bibitem[Damasso et al.(2020)]{2020SciA....6.7467D} Damasso, M., Del Sordo, F., Anglada-Escud{\'e}, G., et al.\ 2020, Science Advances, 6, eaax7467
+
+\end{thebibliography}
+\end{document}
